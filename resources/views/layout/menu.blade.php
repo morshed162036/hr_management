@@ -484,10 +484,10 @@
                 <li class=" nav-item"><a href="#"><i class="bx bx-wallet"></i><span class="menu-title"
                             data-i18n="Icons">Company Management</span></a>
                     <ul class="menu-content">
-                        <li><a href="payment-method.index"><i class="bx bx-right-arrow-alt"></i><span
+                        <li><a href="{{ route('wings.index') }}"><i class="bx bx-right-arrow-alt"></i><span
                                     class="menu-item">Wings</span></a>
                         </li>
-                        <li><a href="payment-transfer.index"><i
+                        <li><a href="{{ route('branch.index') }}"><i
                                     class="bx bx-right-arrow-alt"></i><span class="menu-item"
                                     data-i18n="boxicons">Branch</span></a>
                         </li>

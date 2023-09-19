@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->biginteger('wing_id');
             $table->string('title');
-            $table->text('desctiption')->nullable();
+            $table->text('description')->nullable();
             $table->string('phone')->nullable();
             $table->string('email')->nullable();
             $table->string('address');

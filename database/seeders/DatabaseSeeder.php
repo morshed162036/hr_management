@@ -18,6 +18,8 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
-        $this->call(SuperAdminSeeder::class);
+        //$this->call(SuperAdminSeeder::class);
+        //$this->call(WingsSeeder::class);
+        $this->call(BranchOfficeSeeder::class);
     }
 }

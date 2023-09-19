@@ -14,7 +14,8 @@ return new class extends Migration
         Schema::create('wings', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->text('desctiption')->nullable();
+            $table->text('description')->nullable();
+            $table->enum('status',['Active','Inactive'])->default('Active');
             $table->timestamps();
         });
     }
