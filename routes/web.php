@@ -4,6 +4,10 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Settings\WingController;
 use App\Http\Controllers\Settings\BranchController;
+use App\Http\Controllers\Settings\DepartmentController;
+use App\Http\Controllers\Settings\SectionController;
+use App\Http\Controllers\Settings\DesignationController;
+use App\Http\Controllers\Settings\GradeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -27,6 +31,10 @@ Route::prefix('/')->group(function(){
         Route::resource('wings', WingController::class);
         Route::post('update-wing-status',[WingController::class,'updateWingsStatus'])->name('updateWingsStatus');
         Route::resource('branch', BranchController::class);
+        Route::resource('department', DepartmentController::class);
+        Route::resource('section', SectionController::class);
+        Route::resource('designation', DesignationController::class);
+        Route::resource('grade', GradeController::class);
     });
 });
 

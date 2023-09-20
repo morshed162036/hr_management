@@ -475,12 +475,6 @@
 
                 <li class=" navigation-header"><span>Basic Settings</span>
                 </li>
-                <li class=" nav-item"><a href="unit.index"><i class="bx bx-grid-alt"></i><span
-                            class="menu-title" data-i18n="Colors">Designation</span></a>
-                </li>
-                <li class=" nav-item"><a href="unit.index"><i class="bx bx-grid-alt"></i><span
-                            class="menu-title" data-i18n="Colors">Grade</span></a>
-                </li>
                 <li class=" nav-item"><a href="#"><i class="bx bx-wallet"></i><span class="menu-title"
                             data-i18n="Icons">Company Management</span></a>
                     <ul class="menu-content">
@@ -491,16 +485,23 @@
                                     class="bx bx-right-arrow-alt"></i><span class="menu-item"
                                     data-i18n="boxicons">Branch</span></a>
                         </li>
-                        <li><a href="payment-transfer.index"><i
+                        <li><a href="{{ route('department.index') }}"><i
                                     class="bx bx-right-arrow-alt"></i><span class="menu-item"
                                     data-i18n="boxicons">Department</span></a>
                         </li>
-                        <li><a href="payment-transfer.index"><i
+                        <li><a href="{{ route('section.index') }}"><i
                                     class="bx bx-right-arrow-alt"></i><span class="menu-item"
                                     data-i18n="boxicons">Section</span></a>
                         </li>
                     </ul>
                 </li>
+                <li class=" nav-item"><a href="{{ route('designation.index') }}"><i class="bx bx-grid-alt"></i><span
+                            class="menu-title" data-i18n="Colors">Designation</span></a>
+                </li>
+                <li class=" nav-item"><a href="{{ route('grade.index') }}"><i class="bx bx-grid-alt"></i><span
+                            class="menu-title" data-i18n="Colors">Grade</span></a>
+                </li>
+                
 
                 <li class=" navigation-header"><span>Supplier Management</span>
                 </li>
