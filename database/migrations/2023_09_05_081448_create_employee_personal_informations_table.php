@@ -18,8 +18,8 @@ return new class extends Migration
             $table->string('nationality');
             $table->string('religion');
             $table->string('blood_group');
-            $table->enum('marital_status',['Single','Married']);
-            $table->enum('employment_of_spouse',['yes','no']);
+            $table->enum('marital_status',['Single','Married'])->default('Single');
+            $table->enum('employment_of_spouse',['Yes','No'])->default('No');
             $table->string('no_of_children')->default(0);
             $table->timestamps();
         });

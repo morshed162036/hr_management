@@ -29,7 +29,7 @@ return new class extends Migration
             $table->date('resign_date')->nullable();
             $table->enum('employee_type',['Probation','Permanent', 'Master Roll','Contractual']);
             $table->biginteger('wing_id');
-            $table->biginteger('brunch_id');
+            $table->biginteger('branch_id');
             $table->biginteger('department_id');
             $table->biginteger('section_id');
             $table->biginteger('designation_id');

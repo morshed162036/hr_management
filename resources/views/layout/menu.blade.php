@@ -236,7 +236,7 @@
 
                 <li class=" navigation-header"><span>Employee Section</span>
                 </li>
-                <li class=" nav-item"><a href="brand.index"><i class="bx bxl-slack"></i><span
+                <li class=" nav-item"><a href="{{ route('employee-list.index') }}"><i class="bx bxl-slack"></i><span
                             class="menu-title">Employee Management</span></a>
                 </li>
                 <li class=" nav-item"><a href="catalogue.index"><i class="bx bx-building"></i><span

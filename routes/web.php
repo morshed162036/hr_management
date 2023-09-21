@@ -8,6 +8,7 @@ use App\Http\Controllers\Settings\DepartmentController;
 use App\Http\Controllers\Settings\SectionController;
 use App\Http\Controllers\Settings\DesignationController;
 use App\Http\Controllers\Settings\GradeController;
+use App\Http\Controllers\Employee\EmployeeListController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -35,6 +36,9 @@ Route::prefix('/')->group(function(){
         Route::resource('section', SectionController::class);
         Route::resource('designation', DesignationController::class);
         Route::resource('grade', GradeController::class);
+
+        Route::resource('employee-list', EmployeeListController::class);
+
     });
 });
 
