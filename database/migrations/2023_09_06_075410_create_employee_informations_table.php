@@ -37,6 +37,7 @@ return new class extends Migration
             $table->biginteger('report_to');
             $table->enum('pf&gratuity_eligiblity',['Yes','No']);
             $table->string('profile_pic')->nullable();
+            $table->string('document')->nullable();
             $table->timestamps();
         });
     }

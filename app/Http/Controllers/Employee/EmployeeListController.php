@@ -29,7 +29,7 @@ class EmployeeListController extends Controller
      */
     public function create()
     {
-        //
+        return view("employee.list.create");
     }
 
     /**
