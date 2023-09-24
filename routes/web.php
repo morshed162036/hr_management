@@ -1,14 +1,23 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+
 use App\Http\Controllers\Admin\AdminController;
+
 use App\Http\Controllers\Settings\WingController;
 use App\Http\Controllers\Settings\BranchController;
 use App\Http\Controllers\Settings\DepartmentController;
 use App\Http\Controllers\Settings\SectionController;
 use App\Http\Controllers\Settings\DesignationController;
 use App\Http\Controllers\Settings\GradeController;
+
 use App\Http\Controllers\Employee\EmployeeListController;
+
+use App\Http\Controllers\Leave\HolidaysController;
+use App\Http\Controllers\Leave\LeaveController;
+use App\Http\Controllers\Leave\LeaveApplicationController;
+use App\Http\Controllers\Leave\LeaveApplicationOnlineController;
+use App\Http\Controllers\Leave\LeaveApplicationApprovalController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -38,6 +47,12 @@ Route::prefix('/')->group(function(){
         Route::resource('grade', GradeController::class);
 
         Route::resource('employee-list', EmployeeListController::class);
+        Route::resource('leave-holidays', HolidaysController::class);
+        Route::get('leave-holidays-year', [HolidaysController::class,'year'])->name('leave-holidays.year');
+        Route::resource('leave-type', LeaveController::class);
+        Route::resource('leave-application', LeaveApplicationController::class);
+        Route::resource('leave-application-online', LeaveApplicationOnlineController::class);
+        Route::resource('leave-application-approval', LeaveApplicationApprovalController::class);
 
     });
 });

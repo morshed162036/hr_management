@@ -55,7 +55,7 @@
                         <ol class="breadcrumb p-0 mb-0">
                             <li class="breadcrumb-item"><a href="{{ route('dashboard') }}"><i class="bx bx-home-alt"></i></a>
                             </li>
-                            <li class="breadcrumb-item active">Leave Applications
+                            <li class="breadcrumb-item active">Pending Leave Applications
                             </li>
                         </ol>
                     </div>
@@ -69,12 +69,12 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h5 class="card-title">Application List</h5>
-                            <div class="heading-elements">
+                            <h5 class="card-title">Application Pending List</h5>
+                            {{-- <div class="heading-elements">
                                 <ul class="list-inline mb-0">
                                     <li class="ml-2"><a href="{{ route('leave-application.create') }}" class="btn btn-primary">+ Create</a></li>
                                 </ul>
-                            </div>
+                            </div> --}}
                         </div>
                         <div class="card-content">
                             <div class="card-body card-dashboard">
@@ -91,7 +91,7 @@
                                                 <th>Application Type</th>
                                                 <th>Status</th>
                                                 <th>Approved/Declined By</th>
-                                                {{-- <th>Action</th> --}}
+                                                <th>Action</th>
                                                 {{-- <th>Document</th> --}}
 
                                             </tr>
@@ -116,18 +116,18 @@
                                                         @endif
                                                             </td>
 
-                                                        {{-- <td>
+                                                        <td>
                                                             <div class="dropdown">
                                                                 <span class="bx bx-dots-vertical-rounded font-medium-3 dropdown-toggle nav-hide-arrow cursor-pointer" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="menu"></span>
                                                                 <div class="dropdown-menu dropdown-menu-right">
-                                                                    <a class="dropdown-item" href="{{ route('leave-application.edit',$application->id) }}"><i class="bx bx-edit-alt mr-1"></i> edit</a>
-                                                                    <form action="{{ route('leave-application.destroy',$application->id) }}" method="post"> @csrf @method('Delete')
+                                                                    <a class="dropdown-item" href="{{ route('leave-application-approval.edit',$application->id) }}"><i class="bx bx-edit-alt mr-1"></i>Give Decision</a>
+                                                                    {{-- <form action="{{ route('leave-application.destroy',$application->id) }}" method="post"> @csrf @method('Delete')
                                                                         <button type="submit" class="dropdown-item"><i class="bx bx-trash mr-1"></i> delete</button>
-                                                                    </form>
+                                                                    </form> --}}
                                                                     
                                                                 </div>
                                                             </div>
-                                                        </td> --}}
+                                                        </td>
                                                     </tr>   
                                                 @endforeach
                                             @else
@@ -145,7 +145,7 @@
                                                 <th>Application Type</th>
                                                 <th>Status</th>
                                                 <th>Approved/Declined By</th>
-                                                {{-- <th>Action</th> --}}
+                                                <th>Action</th>
                                                 {{-- <th>Document</th> --}}
                                             </tr>
                                         </tfoot>

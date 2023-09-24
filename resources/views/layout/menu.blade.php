@@ -239,8 +239,25 @@
                 <li class=" nav-item"><a href="{{ route('employee-list.index') }}"><i class="bx bxl-slack"></i><span
                             class="menu-title">Employee Management</span></a>
                 </li>
-                <li class=" nav-item"><a href="catalogue.index"><i class="bx bx-building"></i><span
-                            class="menu-title">Leave Management</span></a>
+                <li class=" nav-item"><a href="#"><i class="bx bx-group"></i><span class="menu-title">Leave Management</span></a>
+                    <ul class='menu-content'>
+                        <li><a href="{{ route('leave-holidays.index') }}"><i class="bx bx-right-arrow-alt"></i><span
+                                    class="menu-item" data-i18n="LivIcons">Holidays</span></a>
+                        </li>
+                        <li><a href="{{ route('leave-type.index') }}"><i class="bx bx-right-arrow-alt"></i><span
+                                    class="menu-item" data-i18n="LivIcons">Leave Type</span></a>
+                        </li>
+                        <li><a href="{{ route('leave-application-online.index') }}"><i class="bx bx-right-arrow-alt"></i><span
+                                    class="menu-item" data-i18n="LivIcons">Online Application</span></a>
+                        </li>
+                        <li><a href="{{ route('leave-application.index') }}"><i class="bx bx-right-arrow-alt"></i><span
+                                    class="menu-item" data-i18n="LivIcons">Offline Application</span></a>
+                        </li>
+                        <li><a href="{{ route('leave-application-approval.index') }}"><i class="bx bx-right-arrow-alt"></i><span
+                                    class="menu-item" data-i18n="LivIcons">Approval</span></a>
+                        </li>
+                    </ul>
+                </li>
                 <li class=" nav-item"><a href="category.index"><i class="bx bxs-categories"></i><span
                             class="menu-title">Attedance Management</span></a>
                 <li class=" nav-item"><a href="product.index"><i class="bx bx-package"></i><span

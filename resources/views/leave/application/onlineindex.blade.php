@@ -72,7 +72,7 @@
                             <h5 class="card-title">Application List</h5>
                             <div class="heading-elements">
                                 <ul class="list-inline mb-0">
-                                    <li class="ml-2"><a href="{{ route('leave-application.create') }}" class="btn btn-primary">+ Create</a></li>
+                                    <li class="ml-2"><a href="{{ route('leave-application-online.create') }}" class="btn btn-primary">+ Application Form</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -82,13 +82,10 @@
                                     <table class="table zero-configuration">
                                         <thead>
                                             <tr>
-                                                <th>Name</th>
-                                                <th>Employee ID</th>
                                                 <th>Leave Type</th>
                                                 <th>Leave Dates</th>
                                                 <th>Days</th>
                                                 <th>Reason</th>
-                                                <th>Application Type</th>
                                                 <th>Status</th>
                                                 <th>Approved/Declined By</th>
                                                 {{-- <th>Action</th> --}}
@@ -100,13 +97,10 @@
                                             @if ($applications)
                                                 @foreach ($applications as $application)
                                                     <tr>
-                                                        <td class="text-bold-600" >{{ $application->employee->info->first_name }} {{ $application->employee->info->last_name }}</td>
-                                                        <td>{{ $application->employee->info->employee_id }}</td>
                                                         <td>{{ $application->leaves->title }}</td>
                                                         <td>{{ $application->from }} to {{ $application->to }}</td>
                                                         <td>{{ $application->days }}</td>
                                                         <td>{{ $application->reason }}</td>
-                                                        <td>{{ $application->type }}</td>
                                                         <td>{{ $application->status }}</td>
                                                         <td>@if ($application->approved)
                                                             {{ $application->approved->info->first_name }} {{ $application->approved->info->last_name }} <br>
@@ -136,13 +130,10 @@
                                         </tbody>
                                         <tfoot>
                                             <tr>
-                                                <th>Name</th>
-                                                <th>Employee ID</th>
                                                 <th>Leave Type</th>
                                                 <th>Leave Dates</th>
                                                 <th>Days</th>
                                                 <th>Reason</th>
-                                                <th>Application Type</th>
                                                 <th>Status</th>
                                                 <th>Approved/Declined By</th>
                                                 {{-- <th>Action</th> --}}

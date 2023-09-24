@@ -31,14 +31,14 @@
     <div class="content-header-left col-12 mb-2 mt-1">
         <div class="row breadcrumbs-top">
             <div class="col-12">
-                <h5 class="content-header-title float-left pr-1 mb-0">Leave Create</h5>
+                <h5 class="content-header-title float-left pr-1 mb-0">Leave Application Approval</h5>
                 <div class="breadcrumb-wrapper col-12">
                     <ol class="breadcrumb p-0 mb-0">
                         <li class="breadcrumb-item"><a href="{{ route('dashboard') }}"><i class="bx bx-home-alt"></i></a>
                         </li>
-                        <li class="breadcrumb-item"><a href="{{ route('leave-type.index') }}">Leaves</a>
+                        <li class="breadcrumb-item"><a href="{{ route('leave-application-approval.index') }}">Pending Leave Applications</a>
                         </li>
-                        <li class="breadcrumb-item active">Leave Create
+                        <li class="breadcrumb-item active">Leave Application Approval
                         </li>
                     </ol>
                 </div>
@@ -64,39 +64,89 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-content">
-                        <form action="{{ route('leave-type.store') }}" method="post" enctype="multipart/form-data"> @csrf
+                        <form action="{{ route('leave-application-approval.update',$application->id) }}" method="post" enctype="multipart/form-data"> @csrf @method('put')
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-md-10">
                                         <fieldset>
-                                            <h5>Title <span class="star">*</span></h5>
+                                            <h5>Employee ID <span class="star">*</span></h5>
                                             <div class="input-group">
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text" id="basic-Createon1"><i class="bx bx-file"></i></span>
                                                 </div>
-                                                <input type="text" class="form-control" placeholder="Department Name" aria-describedby="basic-Createon1" name="title" required>
+                                                <input type="text" class="form-control" placeholder="Enter Employee ID" aria-describedby="basic-Createon1" name="employee_id" value="{{ $application->employee->info->employee_id }}" readonly>
                                             </div>
                                         </fieldset>
-                                        <fieldset>
-                                            <h5>Days <span class="star">*</span></h5>
-                                            <div class="input-group">
-                                                <div class="input-group-prepend">
-                                                    <span class="input-group-text" id="basic-Createon1"><i class="bx bx-file"></i></span>
-                                                </div>
-                                                <input type="text" class="form-control" placeholder="Department Name" aria-describedby="basic-Createon1" name="days" required>
-                                            </div>
-                                        </fieldset>
-                                        
                                         <fieldset class="mt-2">
-                                            <h5>Description</h5>
+                                            <h5>Leave Type <span class="star">*</span></h5>
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text" id="basic-Createon1"><i class="bx bx-file"></i></span>
+                                                </div>
+                                                <input type="text" class="form-control" value="{{ $application->leaves->title }}" readonly>
+                                            </div>
+                                        </fieldset>
+                                        <fieldset class="mt-2">
+                                            <h5>From <span class="star">*</span></h5>
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text" id="basic-Createon1"><i class="bx bx-file"></i></span>
+                                                </div>
+                                                <input type="date" class="form-control" aria-describedby="basic-Createon1" name="from" readonly value="{{ $application->from }}">
+                                            </div>
+                                        </fieldset>
+                                        <fieldset class="mt-2">
+                                            <h5>To <span class="star">*</span></h5>
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text" id="basic-Createon1"><i class="bx bx-file"></i></span>
+                                                </div>
+                                                <input type="date" class="form-control" placeholder="Department Name" aria-describedby="basic-Createon1" name="to" readonly value="{{ $application->to }}">
+                                            </div>
+                                        </fieldset>
+                                        <fieldset class="mt-2">
+                                            <h5>Total Days <span class="star">*</span></h5>
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text" id="basic-Createon1"><i class="bx bx-file"></i></span>
+                                                </div>
+                                                <input type="number" class="form-control" placeholder="0" aria-describedby="basic-Createon1" name="days" readonly value="{{ $application->day }}">
+                                            </div>
+                                        </fieldset>
+                                        <fieldset class="mt-2">
+                                            <h5>Reason <span class="star">*</span></h5>
                                             <div class="input-group">
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text" id="basic-Createon1"><i class="bx bx-spreadsheet"></i></span>
                                                 </div>
-                                                <textarea class="form-control" id="basicTextarea" rows="3" placeholder="" name="description"></textarea>
+                                                <textarea class="form-control" id="basicTextarea" rows="3" placeholder="" name="reason" readonly>{{ $application->reason}}</textarea>
                                             </div>
                                         </fieldset>
-                                        <button type="submit" class="btn btn-primary mt-2 btn-lg mx-1">Create</button>
+                                        <fieldset class="mt-2">
+                                            <h5>Status</h5>
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text" id="basic-Createon1"><i class="bx bx-file"></i></span>
+                                                </div>
+                                                <input type="text" class="form-control" placeholder="0" aria-describedby="basic-Createon1" value="{{ $application->status }}" readonly>
+                                            </div>
+                                        </fieldset>
+                                        <fieldset class="mt-2">
+                                            <h5>Approval Status</h5>
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text" id="basic-Createon1"><i class="bx bx-file"></i></span>
+                                                </div>
+                                                <select name="status" id="" class="form-control">
+                                                    <option value="">Select</option>
+                                                    <option value="Approved">Approved</option>
+                                                    <option value="Declined">Declined</option>
+                                                </select>
+                                            </div>
+                                        </fieldset>
+
+                                        
+                                        <button type="submit" class="btn btn-primary mt-2 btn-lg mx-1">Update</button>
                                     </div>
                                 </div>
                             </div>

@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('holidays', function (Blueprint $table) {
             $table->id();
             $table->string('title');
+            $table->string('year');
             $table->date('holiday_date');
             $table->enum('holiday_type',['Govt','Company']);
             $table->text('description')->nullable();

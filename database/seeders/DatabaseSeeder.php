@@ -22,5 +22,6 @@ class DatabaseSeeder extends Seeder
         $this->call([WingsSeeder::class,BranchOfficeSeeder::class]);
         $this->call([DepartmentSeeder::class,SectionSeeder::class]);
         $this->call([DesignationSeeder::class,GradeSeeder::class]);
+        $this->call([HolidaysSeeder::class,LeaveSeeder::class,LeaveApplicationSeeder::class]);
     }
 }

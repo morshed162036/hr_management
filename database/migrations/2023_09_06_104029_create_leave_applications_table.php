@@ -15,13 +15,13 @@ return new class extends Migration
             $table->id();
             $table->biginteger('user_id');
             $table->biginteger('leave_id');
-            $table->biginteger('grade_id');
             $table->date('from');
             $table->date('to');
             $table->string('days');
             $table->string('reason');
-            $table->enum('status',['New','Approved','Declined']);
-            $table->biginteger('applied_by');
+            $table->enum('type',['Online','Offline'])->default('Offline');
+            $table->enum('status',['New','Approved','Declined'])->default('New');
+            $table->biginteger('applied_by')->default(0);
             $table->biginteger('approved_by')->default(0);
             $table->string('document')->nullable();
             $table->timestamps();
