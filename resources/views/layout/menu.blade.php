@@ -341,6 +341,24 @@
                     </ul>
                 </li>
                 <li class=" nav-item"><a href="#"><i class="bx bxs-buoy"></i><span
+                            class="menu-title">Promotion</span></a>
+                    <ul class='menu-content'>
+                        <li><a href="{{ route('promotion.create','new') }}"><i class="bx bx-right-arrow-alt"></i><span
+                                    class="menu-item" data-i18n="LivIcons">New Promotion</span></a>
+                        </li>
+                        <li><a href="{{ route('promotion.create','previous') }}"><i
+                                    class="bx bx-right-arrow-alt"></i><span class="menu-item"
+                                    data-i18n="LivIcons">Add Previous Promotion History</span></a>
+                        </li>
+                        <li><a href="project.index"><i class="bx bx-right-arrow-alt"></i><span
+                            class="menu-item" data-i18n="LivIcons">Promotion Approval</span></a>
+                        </li>
+                        <li><a href="{{ route('promotion.history') }}"><i class="bx bx-right-arrow-alt"></i><span class="menu-item"
+                                    data-i18n="LivIcons">Employee Promotion Statement</span></a>
+                        </li>
+                    </ul>
+                </li>
+                <li class=" nav-item"><a href="#"><i class="bx bxs-buoy"></i><span
                             class="menu-title">Allowance</span></a>
                     <ul class='menu-content'>
                         <li><a href="project.index"><i class="bx bx-right-arrow-alt"></i><span

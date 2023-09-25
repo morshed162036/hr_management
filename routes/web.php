@@ -18,6 +18,8 @@ use App\Http\Controllers\Leave\LeaveController;
 use App\Http\Controllers\Leave\LeaveApplicationController;
 use App\Http\Controllers\Leave\LeaveApplicationOnlineController;
 use App\Http\Controllers\Leave\LeaveApplicationApprovalController;
+
+use App\Http\Controllers\Hr\PromotionController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -53,6 +55,9 @@ Route::prefix('/')->group(function(){
         Route::resource('leave-application', LeaveApplicationController::class);
         Route::resource('leave-application-online', LeaveApplicationOnlineController::class);
         Route::resource('leave-application-approval', LeaveApplicationApprovalController::class);
+        Route::match(['get','post'],'promotion/{slug}', [PromotionController::class,'create'])->name('promotion.create');
+        Route::match(['get','post'],'promotion-store/{slug}', [PromotionController::class,'store'])->name('promotion.store');
+        Route::match(['get','post'],'promotion-history', [PromotionController::class,'promotion_history'])->name('promotion.history');
 
     });
 });
