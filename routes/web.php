@@ -20,6 +20,7 @@ use App\Http\Controllers\Leave\LeaveApplicationOnlineController;
 use App\Http\Controllers\Leave\LeaveApplicationApprovalController;
 
 use App\Http\Controllers\Hr\PromotionController;
+use App\Http\Controllers\Hr\IncrementController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -58,6 +59,14 @@ Route::prefix('/')->group(function(){
         Route::match(['get','post'],'promotion/{slug}', [PromotionController::class,'create'])->name('promotion.create');
         Route::match(['get','post'],'promotion-store/{slug}', [PromotionController::class,'store'])->name('promotion.store');
         Route::match(['get','post'],'promotion-history', [PromotionController::class,'promotion_history'])->name('promotion.history');
+        Route::get('promotion-approval-list',[PromotionController::class,'index'])->name('promotion.index');
+        Route::post('promotion-approval/{slug}/{id}',[PromotionController::class,'update'])->name('promotion-approval.update');
+
+        Route::match(['get','post'],'increment/{slug}', [IncrementController::class,'create'])->name('increment.create');
+        Route::match(['get','post'],'increment-store/{slug}', [IncrementController::class,'store'])->name('increment.store');
+        Route::match(['get','post'],'increment-history', [IncrementController::class,'increment_history'])->name('increment.history');
+        Route::get('increment-approval-list',[IncrementController::class,'index'])->name('increment.index');
+        Route::post('increment-approval/{slug}/{id}',[IncrementController::class,'update'])->name('increment-approval.update');
 
     });
 });

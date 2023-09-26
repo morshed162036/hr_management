@@ -23,6 +23,6 @@ class DatabaseSeeder extends Seeder
         $this->call([DepartmentSeeder::class,SectionSeeder::class]);
         $this->call([DesignationSeeder::class,GradeSeeder::class]);
         $this->call([HolidaysSeeder::class,LeaveSeeder::class,LeaveApplicationSeeder::class]);
-        $this->call([PromotionSeeder::class]);
+        $this->call([PromotionSeeder::class,IncrementSeeder::class]);
     }
 }

@@ -328,14 +328,17 @@
                 <li class=" nav-item"><a href="#"><i class="bx bxs-buoy"></i><span
                             class="menu-title">Increment</span></a>
                     <ul class='menu-content'>
-                        <li><a href="project.index"><i class="bx bx-right-arrow-alt"></i><span
+                        <li><a href="{{ route('increment.create','new') }}"><i class="bx bx-right-arrow-alt"></i><span
                                     class="menu-item" data-i18n="LivIcons">Salary Increment Entry</span></a>
                         </li>
-                        <li><a href="project-estimation.index"><i
+                        <li><a href="{{ route('increment.create','previous') }}"><i
                                     class="bx bx-right-arrow-alt"></i><span class="menu-item"
                                     data-i18n="LivIcons">Add Previous Increment History</span></a>
                         </li>
-                        <li><a href="project.start"><i class="bx bx-right-arrow-alt"></i><span class="menu-item"
+                        <li><a href="{{ route('increment.index') }}"><i class="bx bx-right-arrow-alt"></i><span class="menu-item"
+                                    data-i18n="LivIcons">Increment Approval</span></a>
+                        </li>
+                        <li><a href="{{ route('increment.history') }}"><i class="bx bx-right-arrow-alt"></i><span class="menu-item"
                                     data-i18n="LivIcons">Salary Increment Statement</span></a>
                         </li>
                     </ul>
@@ -350,7 +353,7 @@
                                     class="bx bx-right-arrow-alt"></i><span class="menu-item"
                                     data-i18n="LivIcons">Add Previous Promotion History</span></a>
                         </li>
-                        <li><a href="project.index"><i class="bx bx-right-arrow-alt"></i><span
+                        <li><a href="{{ route('promotion.index') }}"><i class="bx bx-right-arrow-alt"></i><span
                             class="menu-item" data-i18n="LivIcons">Promotion Approval</span></a>
                         </li>
                         <li><a href="{{ route('promotion.history') }}"><i class="bx bx-right-arrow-alt"></i><span class="menu-item"

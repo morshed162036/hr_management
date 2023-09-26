@@ -15,7 +15,9 @@ class PromotionController extends Controller
      */
     public function index()
     {
-        //
+        $promotions = Promotion::with('employee','previous','next')->where('status','New')->get()->all();
+        //dd($promotions);
+        return view('hr.promotion.approvallist')->with(compact('promotions'));
     }
 
     /**
@@ -130,9 +132,19 @@ class PromotionController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request,string $slug, string $id)
     {
-        //
+        $promotion = Promotion::findorFail($id);
+        $promotion->status = $slug;
+        $promotion->approved_by = Auth::user()->id;
+        
+        if($slug = 'Approved'){
+            $employee_info = Employee_information::where('user_id',$promotion->user_id)->get()->first();
+            $employee_info->designation_id = $promotion->current_designation;
+            $employee_info->update();
+        }
+        $promotion->update();
+        return redirect(route('promotion.index'));
     }
 
     /**

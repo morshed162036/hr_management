@@ -18,7 +18,7 @@ return new class extends Migration
             $table->biginteger('previous_grade')->default(0);
             $table->biginteger('current_grade');
             $table->enum('status',['New','Approved','Declined']);
-            $table->biginteger('approved_by');
+            $table->biginteger('approved_by')->default(0);
             $table->timestamps();
         });
     }

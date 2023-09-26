@@ -4,9 +4,9 @@ namespace App\Models\Hr;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Settings\Designation;
+use App\Models\Settings\Grade;
 use App\Models\User;
-class Promotion extends Model
+class Increment extends Model
 {
     use HasFactory;
 
@@ -14,10 +14,10 @@ class Promotion extends Model
         return $this->belongsTo(User::class,'user_id')->with('info');
     }
     public function previous(){
-        return $this->belongsTo(Designation::class,'previous_designation');
+        return $this->belongsTo(Grade::class,'previous_grade');
     }
     public function next(){
-        return $this->belongsTo(Designation::class,'current_designation');
+        return $this->belongsTo(Grade::class,'current_grade');
     }
     public function approved(){
         return $this->belongsTo(User::class,'approved_by')->with('info');
