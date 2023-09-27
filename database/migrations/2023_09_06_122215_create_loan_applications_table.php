@@ -17,9 +17,10 @@ return new class extends Migration
             $table->biginteger('loan_id');
             $table->string('loan_amount');
             $table->string('total_month');
+            $table->string('remaining_month')->nullable();
             $table->string('installment_amount');
-            $table->enum('status',['New','Approved','Declined']);
-            $table->biginteger('approved_by');
+            $table->enum('status',['New','Approved','Declined'])->default('New');
+            $table->biginteger('approved_by')->default(0);
             $table->date('activation_date')->nullable();
             $table->string('remarks')->nullable();
             $table->timestamps();

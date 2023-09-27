@@ -406,18 +406,18 @@
                 <li class=" nav-item"><a href="#"><i class="bx bxs-buoy"></i><span
                             class="menu-title">Loan Management</span></a>
                     <ul class='menu-content'>
-                        <li><a href="project.index"><i class="bx bx-right-arrow-alt"></i><span
-                                    class="menu-item" data-i18n="LivIcons">Personal Loan</span></a>
+                        <li><a href="{{ route('loan.index') }}"><i class="bx bx-right-arrow-alt"></i><span
+                                    class="menu-item" data-i18n="LivIcons">Loan Type</span></a>
                         </li>
-                        <li><a href="project-estimation.index"><i
+                        <li><a href="{{ route('loan-application.create') }}"><i class="bx bx-right-arrow-alt"></i><span
+                                    class="menu-item" data-i18n="LivIcons">Loan Apply</span></a>
+                        </li>
+                        <li><a href="{{ route('loan-application.index') }}"><i
                                     class="bx bx-right-arrow-alt"></i><span class="menu-item"
                                     data-i18n="LivIcons">Manage Loan</span></a>
                         </li>
                         <li><a href="project.start"><i class="bx bx-right-arrow-alt"></i><span class="menu-item"
-                                    data-i18n="LivIcons">Advance Salary</span></a>
-                        </li>
-                        <li><a href="project-machine.index"><i class="bx bx-right-arrow-alt"></i><span class="menu-item"
-                                    data-i18n="LivIcons">Bike/Car Loan</span></a>
+                                    data-i18n="LivIcons">Loan Approval</span></a>
                         </li>
                     </ul>
                 </li>

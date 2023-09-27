@@ -21,6 +21,8 @@ use App\Http\Controllers\Leave\LeaveApplicationApprovalController;
 
 use App\Http\Controllers\Hr\PromotionController;
 use App\Http\Controllers\Hr\IncrementController;
+use App\Http\Controllers\Hr\LoanController;
+use App\Http\Controllers\Hr\LoanApplicationController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -56,6 +58,7 @@ Route::prefix('/')->group(function(){
         Route::resource('leave-application', LeaveApplicationController::class);
         Route::resource('leave-application-online', LeaveApplicationOnlineController::class);
         Route::resource('leave-application-approval', LeaveApplicationApprovalController::class);
+        
         Route::match(['get','post'],'promotion/{slug}', [PromotionController::class,'create'])->name('promotion.create');
         Route::match(['get','post'],'promotion-store/{slug}', [PromotionController::class,'store'])->name('promotion.store');
         Route::match(['get','post'],'promotion-history', [PromotionController::class,'promotion_history'])->name('promotion.history');
@@ -68,6 +71,10 @@ Route::prefix('/')->group(function(){
         Route::get('increment-approval-list',[IncrementController::class,'index'])->name('increment.index');
         Route::post('increment-approval/{slug}/{id}',[IncrementController::class,'update'])->name('increment-approval.update');
 
+        Route::resource('loan', LoanController::class);
+        Route::post('update-loan-status',[LoanController::class,'updateLoanStatus'])->name('updateLoanStatus');
+        Route::resource('loan-application', LoanApplicationController::class);
+        Route::match(['get','post'],'loan-application-create', [LoanApplicationController::class,'create'])->name('loan-application.create');
     });
 });
 

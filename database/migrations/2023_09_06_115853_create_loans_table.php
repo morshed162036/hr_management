@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('loans', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->string('description');
-            $table->enum('status',['Active','Inactive']);
+            $table->string('description')->nullable();
+            $table->enum('status',['Active','Inactive'])->default('Active');
             $table->timestamps();
         });
     }
