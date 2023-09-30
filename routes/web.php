@@ -23,6 +23,8 @@ use App\Http\Controllers\Hr\PromotionController;
 use App\Http\Controllers\Hr\IncrementController;
 use App\Http\Controllers\Hr\LoanController;
 use App\Http\Controllers\Hr\LoanApplicationController;
+use App\Http\Controllers\Hr\AllowanceController;
+use App\Http\Controllers\Hr\AllowanceListController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -75,6 +77,10 @@ Route::prefix('/')->group(function(){
         Route::post('update-loan-status',[LoanController::class,'updateLoanStatus'])->name('updateLoanStatus');
         Route::resource('loan-application', LoanApplicationController::class);
         Route::match(['get','post'],'loan-application-create', [LoanApplicationController::class,'create'])->name('loan-application.create');
+
+        Route::resource('allowance', AllowanceController::class);
+        Route::post('update-allowance-status',[AllowanceController::class,'updateAllowanceStatus'])->name('updateAllowanceStatus');
+        Route::resource('allowance-list', AllowanceListController::class);
     });
 });
 

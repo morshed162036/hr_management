@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('allowance_lists', function (Blueprint $table) {
             $table->id();
             $table->biginteger('user_id');
-            $table->biginteger('grade_id');
+            $table->biginteger('designation_id');
             $table->biginteger('allowance_id');
             $table->string('amount');
             $table->date('start_date');

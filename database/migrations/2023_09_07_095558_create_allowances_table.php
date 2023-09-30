@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->string('description')->nullable();
-            $table->enum('status',['Active','Inactive'])->default('active');
+            $table->enum('status',['Active','Inactive'])->default('Active');
             $table->biginteger('created_by');
             $table->timestamps();
         });

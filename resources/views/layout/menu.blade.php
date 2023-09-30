@@ -367,22 +367,17 @@
                         <li><a href="project.index"><i class="bx bx-right-arrow-alt"></i><span
                                     class="menu-item" data-i18n="LivIcons">Arrear</span></a>
                         </li>
-                        <li><a href="project-estimation.index"><i
+                        <li><a href="{{ route('allowance.index') }}"><i
                                     class="bx bx-right-arrow-alt"></i><span class="menu-item"
-                                    data-i18n="LivIcons">Transport Allowance</span></a>
+                                    data-i18n="LivIcons">Allowance Type</span></a>
                         </li>
-                        <li><a href="project.start"><i class="bx bx-right-arrow-alt"></i><span class="menu-item"
-                                    data-i18n="LivIcons">Mobile Bill</span></a>
+                        <li><a href="{{ route('allowance-list.index') }}"><i class="bx bx-right-arrow-alt"></i><span class="menu-item"
+                                    data-i18n="LivIcons">Allowance List</span></a>
                         </li>
-                        <li><a href="project-machine.index"><i class="bx bx-right-arrow-alt"></i><span class="menu-item"
-                                    data-i18n="LivIcons">Lunch Allowance</span></a>
-                        </li>
-                        <li><a href="project-otherexpense.index"><i class="bx bx-right-arrow-alt"></i><span class="menu-item"
-                                    data-i18n="LivIcons">Others Allowance</span></a>
-                        </li>
-                        <li><a href="project-payment.index"><i class="bx bx-right-arrow-alt"></i><span class="menu-item"
+                        
+                        {{-- <li><a href="project-payment.index"><i class="bx bx-right-arrow-alt"></i><span class="menu-item"
                                     data-i18n="LivIcons">All Allowance Report</span></a>
-                        </li>
+                        </li> --}}
                     </ul>
                 </li>
                 <li class=" nav-item"><a href="#"><i class="bx bxs-buoy"></i><span
