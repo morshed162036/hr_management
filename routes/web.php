@@ -60,7 +60,7 @@ Route::prefix('/')->group(function(){
         Route::resource('leave-application', LeaveApplicationController::class);
         Route::resource('leave-application-online', LeaveApplicationOnlineController::class);
         Route::resource('leave-application-approval', LeaveApplicationApprovalController::class);
-        
+
         Route::match(['get','post'],'promotion/{slug}', [PromotionController::class,'create'])->name('promotion.create');
         Route::match(['get','post'],'promotion-store/{slug}', [PromotionController::class,'store'])->name('promotion.store');
         Route::match(['get','post'],'promotion-history', [PromotionController::class,'promotion_history'])->name('promotion.history');
@@ -77,6 +77,8 @@ Route::prefix('/')->group(function(){
         Route::post('update-loan-status',[LoanController::class,'updateLoanStatus'])->name('updateLoanStatus');
         Route::resource('loan-application', LoanApplicationController::class);
         Route::match(['get','post'],'loan-application-create', [LoanApplicationController::class,'create'])->name('loan-application.create');
+        Route::get('loan-approval-list',[LoanApplicationController::class,'list'])->name('loan-approval.list');
+        Route::post('loan-approval/{slug}/{id}',[LoanApplicationController::class,'update'])->name('loan-approval.update');
 
         Route::resource('allowance', AllowanceController::class);
         Route::post('update-allowance-status',[AllowanceController::class,'updateAllowanceStatus'])->name('updateAllowanceStatus');

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Hr;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Auth;
 use App\Models\Hr\Loan_application;
 use App\Models\Hr\Loan;
 use App\Models\Employee\Employee_information;
@@ -17,6 +18,12 @@ class LoanApplicationController extends Controller
         $applications = Loan_application::with('employee','loan','approved')->get()->all();
         //dd($applications);
         return view('hr.loan.application.index')->with(compact('applications'));
+    }
+    public function list()
+    {
+        $applications = Loan_application::with('employee','loan','approved')->where('status','New')->get()->all();
+        //dd($applications);
+        return view('hr.loan.application.approvelist')->with(compact('applications'));
     }
 
     /**
@@ -34,7 +41,7 @@ class LoanApplicationController extends Controller
             else{
                 return redirect(route('loan-application.create'))->with('error','Invalid Employee ID');
             }
-            
+
         }
         return view('hr.loan.application.create')->with(compact('employee'));
     }
@@ -84,9 +91,19 @@ class LoanApplicationController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request,string $slug, string $id)
     {
-        //
+        $application = Loan_application::findorFail($id);
+        $application->status = $slug;
+        $application->approved_by = Auth::user()->id;
+
+        // if($slug = 'Approved'){
+        //     $employee_info = Employee_information::where('user_id',$application->user_id)->get()->first();
+        //     $employee_info->designation_id = $application->current_designation;
+        //     $employee_info->update();
+        // }
+        $application->update();
+        return redirect()->back();
     }
 
     /**

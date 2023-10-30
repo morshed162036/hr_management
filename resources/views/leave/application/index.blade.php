@@ -26,7 +26,7 @@
         a label{
             cursor: pointer;
         }
-    </style> 
+    </style>
 @endsection
 
 @section('content')
@@ -112,7 +112,7 @@
                                                             {{ $application->approved->info->first_name }} {{ $application->approved->info->last_name }} <br>
                                                             {{ $application->approved->info->employee_id }}
                                                             @else
-                                                                Pending 
+                                                                Pending
                                                         @endif
                                                             </td>
 
@@ -124,11 +124,11 @@
                                                                     <form action="{{ route('leave-application.destroy',$application->id) }}" method="post"> @csrf @method('Delete')
                                                                         <button type="submit" class="dropdown-item"><i class="bx bx-trash mr-1"></i> delete</button>
                                                                     </form>
-                                                                    
+
                                                                 </div>
                                                             </div>
                                                         </td> --}}
-                                                    </tr>   
+                                                    </tr>
                                                 @endforeach
                                             @else
                                                 {{ 'No Data Found' }}
@@ -163,7 +163,7 @@
 
 @section('js')
 
-    
+
     <!-- BEGIN: Vendor JS-->
     <script src="{{ asset('admin_template/app-assets/vendors/js/vendors.min.js') }}"></script>
     <script src="{{ asset('admin_template/app-assets/fonts/LivIconsEvo/js/LivIconsEvo.tools.js') }}"></script>

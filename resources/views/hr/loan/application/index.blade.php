@@ -26,7 +26,7 @@
         a label{
             cursor: pointer;
         }
-    </style> 
+    </style>
 @endsection
 
 @section('content')
@@ -104,13 +104,20 @@
                                                         <td>{{ $application->remaining_month }}</td>
                                                         <td>{{ $application->installment_amount }}</td>
                                                         <td style="width: 20%">{{ $application->activation_date }}</td>
-                                                        <td>{{ $application->status }}</td>
+                                                        <td><span class="
+                                                            @if ($application->status == 'New')
+                                                                text-primary
+                                                            @elseif ($application->status == 'Approved')
+                                                                text-success
+                                                            @else
+                                                                text-danger
+                                                            @endif">{{ $application->status }}</span></td>
                                                         <td>@if ($application->approved)
                                                             {{ $application->approved->info->first_name}} {{ $application->approved->info->last_name}} <br>
-                                                            {{ $application->approved->info->employee_id }}
+                                                           <span class="text-primary">ID:</span>  {{ $application->approved->info->employee_id }}
                                                             @else {{"Pending"}}
                                                         @endif</td>
-                                                    </tr>   
+                                                    </tr>
                                                 @endforeach
                                             @else
                                                 {{ 'No Data Found' }}
@@ -145,7 +152,7 @@
 
 @section('js')
 
-    
+
     <!-- BEGIN: Vendor JS-->
     <script src="{{ asset('admin_template/app-assets/vendors/js/vendors.min.js') }}"></script>
     <script src="{{ asset('admin_template/app-assets/fonts/LivIconsEvo/js/LivIconsEvo.tools.js') }}"></script>

@@ -374,7 +374,7 @@
                         <li><a href="{{ route('allowance-list.index') }}"><i class="bx bx-right-arrow-alt"></i><span class="menu-item"
                                     data-i18n="LivIcons">Allowance List</span></a>
                         </li>
-                        
+
                         {{-- <li><a href="project-payment.index"><i class="bx bx-right-arrow-alt"></i><span class="menu-item"
                                     data-i18n="LivIcons">All Allowance Report</span></a>
                         </li> --}}
@@ -411,7 +411,7 @@
                                     class="bx bx-right-arrow-alt"></i><span class="menu-item"
                                     data-i18n="LivIcons">Manage Loan</span></a>
                         </li>
-                        <li><a href="project.start"><i class="bx bx-right-arrow-alt"></i><span class="menu-item"
+                        <li><a href="{{route('loan-approval.list')}}"><i class="bx bx-right-arrow-alt"></i><span class="menu-item"
                                     data-i18n="LivIcons">Loan Approval</span></a>
                         </li>
                     </ul>
@@ -534,7 +534,7 @@
                 <li class=" nav-item"><a href="{{ route('grade.index') }}"><i class="bx bx-grid-alt"></i><span
                             class="menu-title" data-i18n="Colors">Grade</span></a>
                 </li>
-                
+
 
                 <li class=" navigation-header"><span>Supplier Management</span>
                 </li>
